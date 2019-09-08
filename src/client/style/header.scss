@@ -1,0 +1,13 @@
+.wrapper__header {
+  max-width: 1020px;
+  width: 100%;
+  height: 50px;
+  background: $main_color;
+}
+
+.header__menu-button {
+  background-image: url(./images/menu-icon.png);
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}

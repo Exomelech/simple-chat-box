@@ -1,6 +1,13 @@
-$color_text: red;
+$main_color: #6093cc;
+$color_background: #292929; 
 
-h1 {
-  color: $color_text;
-  text-align: center;
+body {
+  background: $color_background;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

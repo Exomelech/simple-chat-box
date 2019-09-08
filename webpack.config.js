@@ -21,8 +21,33 @@ module.exports = {
         use:'babel-loader'
       },
       {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: 'images/'
+            }
+          }
+        ]
+      },
+      {
         test: /\.scss$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader']
+        use: [
+          "style-loader",
+          "css-loader",
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader']
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -32,19 +57,6 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'fonts/'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-              publicPath: 'images/'
             }
           }
         ]

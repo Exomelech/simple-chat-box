@@ -1,8 +1,10 @@
-export default class App extends React.Component {
+export default class Main extends React.Component {
   render() {
     return (
-      <div>
-        <h1>My React App!</h1>
+      <div className='wrapper'>
+        <div className='wrapper__header'>
+          <div className='header__menu-button'></div>
+        </div>
       </div>
     );
   };
