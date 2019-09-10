@@ -1,0 +1,9 @@
+.chatbox {
+  background: $boxes_bg;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  width: 720px;
+  height: 100%;
+}

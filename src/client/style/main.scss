@@ -1,5 +1,8 @@
 $main_color: #6093cc;
+$main_color_hover: #527cac;
 $color_background: #292929; 
+$boxes_bg: #afc8c8;
+$boxes_bg_hover: #96afaf;
 
 body {
   background: $color_background;
@@ -10,4 +13,12 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.body {
+  width: 1020px;
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+  z-index: 0;
 }

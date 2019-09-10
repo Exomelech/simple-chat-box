@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -19,21 +18,26 @@ module.exports = {
         test: /\.(m|js|jsx)$/,
         exclude: /node_modules/,
         use:'babel-loader'
-      },
-      {
+      }, {
         test: /\.(png|jpg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-              publicPath: 'images/'
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images/',
+            publicPath: 'images/'
           }
-        ]
-      },
-      {
+        }]
+      }, {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
+      }, {
         test: /\.scss$/,
         use: [
           "style-loader",
@@ -44,22 +48,9 @@ module.exports = {
             options: { sourceMap: true }
           }
         ]
-      },
-      {
+      }, {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader']
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
       }
     ]
   },

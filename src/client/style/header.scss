@@ -1,13 +1,37 @@
-.wrapper__header {
+$menu-width: 300px;
+@import './popup-menu.scss';
+
+.header {
   max-width: 1020px;
   width: 100%;
   height: 50px;
   background: $main_color;
+  display: flex;
 }
 
 .header__menu-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  box-sizing: border-box; 
+  background-color: $main_color; 
+  width: $menu-width;
+  transition: 0.25s all;
+  cursor: pointer;
+  &:hover {
+    background-color: $main_color_hover;
+    .popup-menu {
+      opacity: 1;
+      top: 50px;
+    }
+  }
+}
+
+.menu__icon {
   background-image: url(./images/menu-icon.png);
   background-size: contain;
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
 }
