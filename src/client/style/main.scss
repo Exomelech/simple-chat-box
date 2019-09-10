@@ -4,21 +4,21 @@ $color_background: #292929;
 $boxes_bg: #afc8c8;
 $boxes_bg_hover: #96afaf;
 
-body {
+html, body, #root {
   background: $color_background;
+  height: 100%;
 }
 
 .wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  max-width: 1020px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 .body {
-  width: 1020px;
-  height: 800px;
+  height: calc( 100% - 50px);
   display: flex;
   flex-direction: row;
   z-index: 0;
+  overflow: hidden;
 }

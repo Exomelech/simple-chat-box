@@ -2,9 +2,7 @@ $menu-width: 300px;
 @import './popup-menu.scss';
 
 .header {
-  max-width: 1020px;
-  width: 100%;
-  height: 50px;
+  min-height: 50px;
   background: $main_color;
   display: flex;
 }
