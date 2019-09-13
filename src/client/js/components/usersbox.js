@@ -61,9 +61,17 @@ export default class UserBox extends React.Component {
   render() {
     return (
       <div className='userbox'>
-        <ExpandableList title='Favotire users' items={arr}/>
-        <ExpandableList title='Users online'/>
+        {/* <ExpandableList title='Favotire users' items={arr}/> */}
+        <OnlineUsers/>
       </div>
     );
   };
 };
+
+class OnlineUsers extends React.Component {
+  render() {
+    return (
+      <ExpandableList title='Users online'/>
+    )
+  }
+}
