@@ -1,0 +1,16 @@
+{
+  "name_pattern": "^[А-Яа-яA-Za-z0-9_-]+$",
+  "pattern": "^[A-Za-z0-9]+$",
+  "login": {
+    "form_title": "Вход на сайт",
+    "button_title": "Войти",
+    "nav_title": "Ещё не зарегестрированы?",
+    "link": "/unsigned/registration/"
+  },
+  "registration": {
+    "form_title": "Регистрация",
+    "button_title": "Зарегистрироваться",
+    "nav_title": "Уже зарегестрированы?",
+    "link": "/unsigned/login/"
+  }
+}
