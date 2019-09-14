@@ -21,7 +21,7 @@ export default class AuthForm extends React.Component {
             <input type='password' className='auth-form__input' id='auth_password' placeholder='Пароль' required pattern={pattern} minLength="6"></input>
           </div>
           <button className='auth-form__button-submit' type="submit">{button_title}</button> 
-          <Link to={link} className='auth-form__button-submit'>{nav_title}</Link>
+          <Link to={link} className='auth-form__button-link'>{nav_title}</Link>
         </form>
       );
     }else{

@@ -15,3 +15,8 @@ app.get("/", function(req, res) {
   console.log("Client has connected");
   res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
+
+app.get("*", function(req, res) {
+  console.log("Client has redirected");
+  res.redirect("/");
+});
