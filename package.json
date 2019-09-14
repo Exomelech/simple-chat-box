@@ -1,7 +1,6 @@
 {
   "name": "chat-box",
   "version": "1.0.0",
-  "description": "",
   "main": "src/server/index.js",
   "scripts": {
     "start": "node src/server/index.js",

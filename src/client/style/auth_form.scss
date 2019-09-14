@@ -1,0 +1,21 @@
+.auth-form {
+  width: 300px;
+  background: $main_color;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .auth-form__block {
+    margin-top: 10px;
+  }
+
+  .auth-form__submit {
+    margin-top: 10px;
+    background: $boxes_bg;
+  }
+
+}
