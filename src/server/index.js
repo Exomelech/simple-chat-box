@@ -6,7 +6,7 @@ app.listen(3000);
 app.use(cors());
 
 const path = require("path");
-//const mysql_api = require("./lib/mysql_api");
+const mysql_api = require("./lib/mysql_api");
 //const external_api = require("./lib/db_external_api");
 
 app.use(jsonParser).use(express.static(path.join(__dirname, "../../dist")));
@@ -19,4 +19,10 @@ app.get("/", function(req, res) {
 app.get("*", function(req, res) {
   console.log("Client has redirected");
   res.redirect("/");
+});
+
+app.post("/registration/", (req, res) => {
+  console.log( 'Client has request registration' );
+  mysql_api.insert(req.body);
+  //res.send('Connected');
 });
