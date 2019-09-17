@@ -5,12 +5,11 @@ module.exports = mysql_api = (function(){
 
     //-- MySql config --//
     const mysql_api = {};
-    const utils = {};
-    const con = mysql.createConnection({
-        host: "localhost",
-        user: "Exomelech",
-        database: "simple_chat_db",
-    });
+    // const con = mysql.createConnection({
+    //     host: "localhost",
+    //     user: "Exomelech",
+    //     database: "simple_chat_db",
+    // });
 
     mysql_api.query = function(sql){
         return con.then( conn => conn.query(sql) );

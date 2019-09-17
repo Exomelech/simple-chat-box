@@ -23,6 +23,12 @@ app.get("*", function(req, res) {
 
 app.post("/registration/", (req, res) => {
   console.log( 'Client has request registration' );
-  mysql_api.insert(req.body);
-  //res.send('Connected');
+  console.log( req.body );
+  mysql_api.insert('users', req.body);
+});
+
+app.post("/login/", (req, res) => {
+  console.log( 'Client has request login' );
+  console.log( req.body );
+  mysql_api.insert('users', req.body);
 });

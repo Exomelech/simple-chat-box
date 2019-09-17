@@ -60,8 +60,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       'React': 'react',
-      'ReactDOM': 'react-dom',
-      'Promise': 'bluebird'
+      'ReactDOM': 'react-dom'
     })
   ]
 };

@@ -47,7 +47,7 @@ export default class AuthForm extends React.Component {
   hadleSubmitRegistration(name, login, password){
     let regexp = new RegExp( data.name_pattern );
     if( name.match(regexp) && name.length >= 3 ){
-      let ret = this.handleChangeLogin(login, password);
+      let ret = this.hadleSubmitLogin(login, password);
       ret.name = name;
       return ret;
     }else{
@@ -57,7 +57,7 @@ export default class AuthForm extends React.Component {
 
   handleSubmitButton(e){
     e.preventDefault();
-    const {name, login, password} = this.state;
+    const {type, name, login, password} = this.state;
     let request_data = {};
     let local_data;
     if( this.state.type === 'login' ){
@@ -68,9 +68,9 @@ export default class AuthForm extends React.Component {
     if( local_data ){
       request_data = local_data;
     };
-    // if( local_data && this.state.type === 'registration' ){
-    //   request('post', '/registration', local_data);
-    // };
+    if( local_data ){
+      request('post', `/${type}`, local_data);
+    };
   };
 
   render() {
