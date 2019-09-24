@@ -6,8 +6,7 @@ app.listen(3000);
 app.use(cors());
 
 const path = require("path");
-const mysql_api = require("./lib/mysql_api");
-//const external_api = require("./lib/db_external_api");
+const external_api = require("./lib/db_external_api");
 
 app.use(jsonParser).use(express.static(path.join(__dirname, "../../dist")));
 
@@ -21,14 +20,8 @@ app.get("*", function(req, res) {
   res.redirect("/");
 });
 
-app.post("/registration/", (req, res) => {
-  console.log( 'Client has request registration' );
-  console.log( req.body );
-  mysql_api.insert('users', req.body);
-});
-
-app.post("/login/", (req, res) => {
-  console.log( 'Client has request login' );
-  console.log( req.body );
-  mysql_api.insert('users', req.body);
+app.post("/auth/", jsonParser, (req, res) => {
+  console.log( 'Client has request auth' );
+  external_api.auth_request(req.body)
+    .then( data => res.json(data) );
 });

@@ -3,11 +3,11 @@ module.exports = mysql_sql = (function(){
     const mysql_sql = {};
     const utils = {};
 
-    mysql_sql.insert = function(table, columns, args){
-        if( columns ){
-            return `INSERT INTO ${table} (${columns}) VALUES ('${args.join("','")}')`;
-        };
+  mysql_sql.insert = function(table, options){
+    if( typeof options === 'object' ){
+      return `INSERT INTO ${table} (${Object.keys(options).join()}) VALUES ('${Object.values(options).join("','")}')`;
     };
+  };
 
     utils.count_matches = function(colm, val){
         let matches = {};

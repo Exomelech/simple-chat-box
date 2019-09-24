@@ -5,26 +5,20 @@ module.exports = mysql_api = (function(){
 
     //-- MySql config --//
     const mysql_api = {};
-    // const con = mysql.createConnection({
-    //     host: "localhost",
-    //     user: "Exomelech",
-    //     database: "simple_chat_db",
-    // });
+    const con = mysql.createConnection({
+        host: "localhost",
+        user: "Exomelech",
+        database: "simple_chat_db",
+    });
 
     mysql_api.query = function(sql){
         return con.then( conn => conn.query(sql) );
     };
 
     // columns: args:
-    mysql_api.insert = function(table, conditions){
-        let columns = [], args = [];
-        for( let key in conditions ){
-          columns.push(key);
-          args.push(conditions[key]);
-        };
-        console.log(columns, args);
-        // let sql = mysql_sql.insert(table, columns, args);
-        // return mysql_api.query(sql);
+    mysql_api.insert = function(table, options){
+        let sql = mysql_sql.insert(table, options);
+        return mysql_api.query(sql);
     };
 
     // columns: conditions:
@@ -35,12 +29,12 @@ module.exports = mysql_api = (function(){
 
     //
     mysql_api.select = function(table, conditions, orders){
-        let options = {
-            conditions: conditions,
-            orders: orders
-        };
-        let sql = mysql_sql.select(table, options);
-        return mysql_api.query(sql);
+      let options = {
+        conditions: conditions,
+        orders: orders
+      };
+      let sql = mysql_sql.select(table, options);
+      return mysql_api.query(sql);
     };
 
     return mysql_api;

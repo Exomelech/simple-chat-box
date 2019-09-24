@@ -69,7 +69,8 @@ export default class AuthForm extends React.Component {
       request_data = local_data;
     };
     if( local_data ){
-      request('post', `/${type}`, local_data);
+      request('post', `/auth`, local_data)
+      .then( res => console.log(res) );
     };
   };
 
